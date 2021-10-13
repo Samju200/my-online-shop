@@ -13,7 +13,7 @@ function Navbar({ click }) {
   return (
     <nav className="navbar">
       <div className="navbar_logo">
-        <Link to="/">
+        <Link to="/my-online-shop">
           <h2>Samju Shopping</h2>
         </Link>
       </div>
@@ -29,7 +29,7 @@ function Navbar({ click }) {
           </Link>
         </li>
         <li>
-          <Link to="/">Shop</Link>
+          <Link to="/my-online-shop">Shop</Link>
         </li>
       </ul>
       <div className="hamburger_menu" onClick={click}>
