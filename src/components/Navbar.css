@@ -8,10 +8,12 @@
   padding: 1.5rem 2rem;
   z-index: 50;
 }
-.navbar_logo > a > h2 {
+.navbar_logo > a > img {
   color: #f4f4f4;
   font-size: 1.4rem;
   cursor: pointer;
+  object-fit: contain;
+  width: 100px;
 }
 .navbar_links {
   display: flex;

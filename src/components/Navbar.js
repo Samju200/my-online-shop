@@ -14,9 +14,7 @@ function Navbar({ click }) {
     <nav className="navbar">
       <div className="navbar_logo">
         <Link to="/my-online-shop">
-          <h2>
-            <img src={Logo} alt="" />
-          </h2>
+          <img src={Logo} alt="" />
         </Link>
       </div>
       <ul className="navbar_links">
