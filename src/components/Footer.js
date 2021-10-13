@@ -27,9 +27,11 @@ function Footer() {
       localStorage.setItem('message', JSON.stringify(data));
       console.log(data);
       setSubmit(true);
+      alert('Subscribe');
       setEmail('');
     }
   };
+  const year = new Date().getFullYear();
   return (
     <>
       <div className="footer">
@@ -104,7 +106,7 @@ function Footer() {
         </div>
       </div>
       <div class="copy">
-        <p>Copyright &copy; 2020, Martha's Living Brands.</p>
+        <p>Copyright &copy; {year}, Martha's Living Brands.</p>
         <ul>
           <li>
             <a href=""></a>
