@@ -18,6 +18,17 @@ footer {
 .footer li {
   list-style: none;
 }
+.newsletter > input {
+  padding: 10px;
+  outline: none;
+}
+.newsletter > button {
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: rgb(255, 166, 95);
+  color: #fff;
+}
 .footer a {
   text-decoration: none;
 }
@@ -30,11 +41,21 @@ footer {
   font-family: PT sans, sans-serif;
   font-size: 13.6px;
   line-height: 23.12px;
+  text-decoration: none;
+  color: #000;
 }
+
 .footer li a:hover {
   color: rgb(255, 166, 95);
 }
 .copy li {
   display: inline-block;
   margin: 10px;
+}
+.error {
+  color: red;
+  display: block;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

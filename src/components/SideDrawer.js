@@ -23,7 +23,7 @@ function SideDrawer({ show }) {
           </Link>
         </li>
         <li>
-          <Link to="/">Shop</Link>
+          <Link to="/my-online-shop">Shop</Link>
         </li>
       </ul>
     </div>

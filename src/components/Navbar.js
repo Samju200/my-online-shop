@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useSelector } from 'react-redux';
-
+import Logo from './img/mlogo.png';
 function Navbar({ click }) {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -14,7 +14,9 @@ function Navbar({ click }) {
     <nav className="navbar">
       <div className="navbar_logo">
         <Link to="/my-online-shop">
-          <h2>Samju Shopping</h2>
+          <h2>
+            <img src={Logo} alt="" />
+          </h2>
         </Link>
       </div>
       <ul className="navbar_links">

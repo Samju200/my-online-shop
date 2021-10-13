@@ -1,7 +1,35 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import './Footer.css';
 
 function Footer() {
+  const [email, setEmail] = useState('');
+  const [submit, setSubmit] = useState(false);
+  let emailRegex = /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/;
+  const [error, setError] = useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email === '') {
+      e.preventDefault();
+      setError('Please enter your Email Address');
+      return false;
+    } else if (!email.match(emailRegex)) {
+      e.preventDefault();
+      setError('Please enter a valid email');
+      return false;
+    } else {
+      const { data } = axios.post(
+        'https://foodapisamju.herokuapp.com/subscribe',
+        {
+          email,
+        }
+      );
+      localStorage.setItem('message', JSON.stringify(data));
+      console.log(data);
+      setSubmit(true);
+      setEmail('');
+    }
+  };
   return (
     <>
       <div className="footer">
@@ -59,11 +87,19 @@ function Footer() {
             <h3>Newsletter</h3>
             <p>Sign up for the latest news, offers and styles</p>
             <br />
-            <input type="text" placeholder="your mail" id="email" />
-            <br />
-            <br />
-            <button type="submit"> SUBSCRIBE</button>
-            <span class="error"></span>
+            <input
+              type="email"
+              placeholder="Enter Your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <span class="error">{error}</span>
+
+            <button type="submit" onClick={handleSubmit}>
+              {' '}
+              SUBSCRIBE
+            </button>
           </form>
         </div>
       </div>
